@@ -1,62 +1,57 @@
 <!DOCTYPE html>
 <html>
   <head>
-<!-- metadata -->
+<!-- adding metadata -->
     <meta charset="utf-8">
     <meta name="description" content="User Input, with JavaScript">
     <meta name="keywords" content="immaculata, ics2o">
-    <meta name="author" content="Brayden MacMillan">
+    <meta name="author" content="Ms Raffin">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- adding a favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="./fav_index/apple-touch-icon.png">
+<!-- adding a favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="./fav_index/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./fav_index/favicon-16x16.png">
     <link rel="manifest" href="./fav_index/site.webmanifest">
-<!-- Link to CSS file -->
     <link rel="stylesheet" href="./css/style.css">
-    <title>Museum Admission</title>
+    <title>Museum Admission in JS</title>
   </head>
   <body>
-    <center>
-<!-- adding a JavaScript button that tells you age restriction-->
+<!-- adding  aJavaScript button that tells you admission fee for a museum -->
     <script src="./js/script.js"></script>
-    <h1>Museum Admission in JS</h1>
-      <p>This program will tell the user the admission cost depending on their age and the day of the week</p>
+	  <center>
+    <h1>Museum Admisson in JS</h1>
 		<table>
-			<tr>
-				<td>
-					<h3>Enter an age:</h3>
-					<form action="javascript:onButtonClick()">						
+			<tr align = "center">
+				<td valign="top" align="right">
+					<h3>This program will tell the user the admission cost depending on their age and day of the week:</h3>
+					<form action="javascript:displayCost()">						
 						<label for="age">Age:</label>
-						<input type="number" step="1"  min="1" id="age" placeholder="Enter your age"><br><br>
-						<input type="submit" value="Display cost">
+						<input type="number" step="1" min="0" id="age"><br><br>
+<!-- adding a drop down menu -->
+						<label for="day">Day:</label>
+						<select name="day" id="day">
+						    <option value="">--Day of the Week--</option>
+						    <option value="Sunday">Sunday</option>
+						    <option value="Monday">Monday</option>
+						    <option value="Tuesday">Tuesday</option>
+						    <option value="Wednesday">Wednesday</option>
+						    <option value="Thursday">Thursday</option>
+						    <option value="Friday">Friday</option>
+							<option value="Saturday">Saturday</option>
+						</select>
+						<br><br>
+						<input type="submit" value="Display Cost">
 					</form>
 				</td>
-				<td>
-<!-- Drop down menu -->
-
-<p>See a drop down menu below!</p>
-  <label for="artists">What day is it for you?</label>
-  <select name="cars" id="cars">
-    <option value="taylor">Monday</option>
-    <option value="delrey">Tuesday</option>
-    <option value="mendes">Wednesday</option>
-    <option value="halsey">Thursday</option>
-     <option value="halsey">Friday</option>
-  </select>
-  <br><br>
-  <input type="submit" value="Submit">
-</form>
-<!-- adding an image -->
-					<img src="./images/museum.jpg" alt="Greeting" width="100%">
+				<td valign="top" align="center">
+					<img src="./images/museum.jpg" alt="Museum" width="50%">
 				</td>
 			</tr>
 		</table>
-<!-- Create a space where the user information will be displayed -->
+		<!-- Create a space where the user information will be displayed -->
 		<div id="display-results">
-			<div id="greeting">
-			</div>
+			
 		</div>
-    </center>
+		  </center>
   </body>
 </html>

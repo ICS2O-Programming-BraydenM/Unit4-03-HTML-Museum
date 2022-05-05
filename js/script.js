@@ -6,36 +6,29 @@
 
 "use strict"
 
-// This function displays a statement to see what movie rating a specific age should be permitted to see
- 
-function onButtonClick () {
-  
-	// get user input (age)
-	let age = parseInt(document.getElementById('age').value)
+// This function displays the discount depending on age and day of the week.
 
-  // declare constants 
-  const FIRST_THRESHOLD = 18;
-  const SECOND_THRESHOLD = 13;
-  const THIRD_THRESHOLD = 8;
+function displayCost() {
+  	// initialize variables
+	let cost = "Please make a selection above."
+	
+	// get age and day of the week
+	let age = parseInt(document.getElementById('age').value)	
+	let select = document.getElementById('day');
+	let day = select.options[select.selectedIndex].value;
 
-  // if statements, if you are 18 years old or older, you are permitted to watch an R rated movie alone, if you are 13 years or older, you are permitted to watch a PG-13 rated movie alone, if you are 8 years or older, you are permitted to watch a G rated movie alone, and if you are 7 years or younger, you should not be seeing a movie alone
-	if (age >= FIRST_THRESHOLD) {
-		let greeting = "You are permitted to watch an R rated movie alone!"
-    document.getElementById('display-results').innerHTML = greeting
+  	
+	if (age < 5 || age > 95) {
+		cost = "The cost is FREE for you. Have fun bestie."
 	}
-
-  else if (age >= SECOND_THRESHOLD) {
-    let greeting = "You are permitted to watch a PG-13 rated movie alone."
-    document.getElementById('display-results').innerHTML = greeting 
-  }
-
-  else if (age >= THIRD_THRESHOLD) {
-    let greeting = "You are permitted to watch a G rated movie alone."
-    document.getElementById('display-results').innerHTML = greeting 
-  }
-
-  else {
-    let greeting = "You should not be going to see a movie alone. Parental guidance is extremely encouraged."
-    document.getElementById('display-results').innerHTML = greeting 
-  }
+	else if ((day == "Tuesday") || (day == "Thursday)") 
+			 || (age >=12) && (age <=21)) {
+		cost = "You get a student discount. Could be worse."
+	}
+	else if ((age > 0) || (day != "")) {		
+		cost = "You have to pay regular price. That is unfortunate."
+	}
+	
+  	// display the greeting
+  	document.getElementById('display-results').innerHTML = cost
 }
